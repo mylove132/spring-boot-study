@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuzhanhui.test.mybatis.mapper.ScriptMapper" >
+    <resultMap id="BaseResultMap" type="com.liuzhanhui.test.mybatis.dto.Script" >
+        <id column="script_id" property="scriptId" jdbcType="INTEGER" />
+        <result column="script_name" property="scriptName" jdbcType="VARCHAR" />
+        <result column="thread_num" property="threadNum" jdbcType="INTEGER" />
+        <result column="stress_time" property="stressTime" jdbcType="INTEGER" />
+    </resultMap>
+    <select id="queryScriptById" resultMap="BaseResultMap">
+        select * from script where script_id = #{scriptId}
+    </select>
+    <insert id="addScript">
+        INSERT INTO script VALUES (#{scriptId}, #{scriptName}, #{threadNum}, #{stressTime})
+    </insert>
+    <delete id="delScriptById">
+        delete script where script_id = #{scriptId}
+    </delete>
+    <select id="queryScripts" resultMap="BaseResultMap">
+        select * from script
+    </select>
+</mapper>

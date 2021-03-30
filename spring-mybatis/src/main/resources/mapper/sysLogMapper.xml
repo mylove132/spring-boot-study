@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuzhanhui.test.mybatis.mapper.SysLogMapper" >
+    <resultMap id="BaseResultMap" type="com.liuzhanhui.test.mybatis.dto.SysLog" >
+        <id column="sys_id" property="sysId" jdbcType="INTEGER" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="operation" property="operation" jdbcType="VARCHAR" />
+        <result column="time" property="time" jdbcType="TIMESTAMP" />
+        <result column="method" property="method" jdbcType="VARCHAR" />
+        <result column="params" property="params" jdbcType="VARCHAR" />
+        <result column="ip" property="ip" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <insert id="saveSysLog" parameterType="com.liuzhanhui.test.mybatis.dto.SysLog" useGeneratedKeys="true" keyProperty="sysId">
+        INSERT INTO sys_log VALUES (#{sysId}, #{username}, #{operation}, #{time}, #{method}, #{params}, #{ip},#{createTime})
+    </insert>
+</mapper>
