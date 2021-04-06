@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-config" />
-        <module name="spring-aop" />
         <module name="spring-log" />
+        <module name="spring-aop" />
+        <module name="spring-config" />
         <module name="spring-mybatis" />
       </profile>
     </annotationProcessing>

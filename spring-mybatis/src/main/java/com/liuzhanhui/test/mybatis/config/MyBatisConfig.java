@@ -11,6 +11,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
+/**
+ * mybatis配置
+ */
 @EnableTransactionManagement
 @Configuration
 public class MyBatisConfig {
